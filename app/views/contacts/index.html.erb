@@ -1,0 +1,23 @@
+<h1 class="text-center"> Here are all your contacts </h1>
+
+<div class="container">
+    <table class="table table-striped table-hover">
+      <th> First Name </th>
+      <th> Middle Name </th>
+      <th> Last Name </th>
+      <th> Email </th>
+      <th> Phone Number </th>
+        <% @contacts.each do |contact| %>
+      <tr>
+        <td> <a href="/contacts/<%=contact.id %>"><%= contact.first_name %> </a> </td>
+        <td> <%= contact.middle_name %></td>
+        <td> <%= contact.last_name %> </td>
+        <td> <%= contact.email %> </td>
+        <td> <%= contact.phone_number %> </td>
+      </tr>
+        <% end %>
+    </table>
+</div>
+<div  class="text-center">
+  <a href="/contacts/new" > Add a new contact! </a> 
+</div>
